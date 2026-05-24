@@ -627,11 +627,32 @@ p  { margin: 0 0 1.1em; }
   font-weight: 600;
 }
 
-.gazebo-section .split__media {
-  aspect-ratio: 4/5;
-  position: relative;
+/* Collage 3 foto: 1 grande in alto, 2 piccole in basso, riempie tutta l'altezza del testo accanto */
+.gazebo-section .split { align-items: stretch; }
+
+.gazebo-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(280px, 2fr) minmax(180px, 1fr);
+  gap: 12px;
+  min-height: 100%;
 }
-.gazebo-section .split__media::after {
+.gazebo-collage__main {
+  grid-column: 1 / -1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.gazebo-collage__main::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(247,242,232,.45);
+  pointer-events: none;
+  z-index: 1;
+}
+.gazebo-collage__main::after {
   content: 'NOVITÀ';
   position: absolute;
   top: 20px;
@@ -645,6 +666,18 @@ p  { margin: 0 0 1.1em; }
   font-weight: 600;
   z-index: 2;
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.gazebo-collage__small {
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--t-fast);
+}
+.gazebo-collage__small:hover { transform: scale(1.02); }
+
+@media (max-width: 820px) {
+  .gazebo-collage {
+    grid-template-rows: minmax(240px, auto) minmax(140px, auto);
+  }
 }
 
 .gazebo-perks {
