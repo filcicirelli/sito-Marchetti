@@ -170,9 +170,19 @@ p  { margin: 0 0 1.1em; }
 .site-header:not(.is-scrolled) .brand,
 .site-header:not(.is-scrolled) .nav-link { color: var(--color-bg); }
 .site-header:not(.is-scrolled) .brand small { color: var(--color-brass); }
+.site-header:not(.is-scrolled) .brand,
+.site-header:not(.is-scrolled) .brand small,
+.site-header:not(.is-scrolled) .nav-link {
+  text-shadow: 0 1px 3px rgba(0,0,0,.35), 0 2px 12px rgba(0,0,0,.25);
+}
 .site-header.is-light:not(.is-scrolled) .brand,
 .site-header.is-light:not(.is-scrolled) .nav-link { color: var(--color-olive-dk); }
 .site-header.is-light:not(.is-scrolled) .brand small { color: var(--color-brass-dk); }
+.site-header.is-light:not(.is-scrolled) .brand,
+.site-header.is-light:not(.is-scrolled) .brand small,
+.site-header.is-light:not(.is-scrolled) .nav-link {
+  text-shadow: 0 1px 2px rgba(247,242,232,.6);
+}
 
 .nav-list {
   display: flex;
@@ -242,8 +252,16 @@ p  { margin: 0 0 1.1em; }
 .hero h1 {
   color: var(--color-bg);
   margin-bottom: 1.2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.45), 0 4px 24px rgba(0,0,0,.3);
 }
-.hero .lead { color: rgba(247,242,232,.92); font-style: normal; }
+.hero .lead {
+  color: rgba(247,242,232,.95);
+  font-style: normal;
+  text-shadow: 0 1px 4px rgba(0,0,0,.45), 0 2px 12px rgba(0,0,0,.25);
+}
+.hero .eyebrow:not(.eyebrow--badge) {
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
 .hero__actions {
   margin-top: 2rem;
   display: flex;
@@ -291,8 +309,17 @@ p  { margin: 0 0 1.1em; }
   background: linear-gradient(180deg, rgba(31,31,29,.35) 0%, rgba(31,31,29,.7) 100%);
 }
 .subhero__content { position: relative; z-index: 1; padding-top: 8rem; }
-.subhero h1 { color: var(--color-bg); margin-bottom: .4rem; }
-.subhero p { color: rgba(247,242,232,.9); max-width: 640px; }
+.subhero h1 {
+  color: var(--color-bg);
+  margin-bottom: .4rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.45), 0 4px 24px rgba(0,0,0,.3);
+}
+.subhero p {
+  color: rgba(247,242,232,.92);
+  max-width: 640px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.45);
+}
+.subhero .eyebrow { text-shadow: 0 1px 3px rgba(0,0,0,.4); }
 
 /* -----  Griglia eventi (card)  ----- */
 .grid-events {
