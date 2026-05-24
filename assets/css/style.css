@@ -386,6 +386,7 @@ p  { margin: 0 0 1.1em; }
   line-height: 1.4;
   color: var(--color-ink-soft);
 }
+.section--olive .quote { color: var(--color-bg); }
 .quote::before, .quote::after {
   content: '"';
   font-size: 1.2em;
