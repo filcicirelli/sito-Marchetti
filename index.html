@@ -271,12 +271,25 @@
   <!-- ============== RECENSIONI ============== -->
   <section class="section section--cream" id="recensioni">
     <div class="container">
-      <div class="text-center">
-        <span class="eyebrow">Le parole dei nostri ospiti</span>
-        <h2>Chi ci ha scelto<br>racconta la sua esperienza.</h2>
-        <div class="divider"></div>
-        <p class="lead" style="max-width:720px;margin:0 auto;">Famiglie, gruppi di amici, festeggiati di ogni età. Ecco cosa pensano di Villa Marchetti coloro che hanno vissuto qui un momento speciale.</p>
-      </div>
+      <details class="reviews-toggle">
+        <summary class="reviews-toggle__summary">
+          <div class="reviews-toggle__heading">
+            <span class="eyebrow">Le parole dei nostri ospiti</span>
+            <h2>Cosa dicono di noi.</h2>
+            <div class="reviews-toggle__rating">
+              <span class="reviews-toggle__stars" aria-hidden="true">★★★★★</span>
+              <span class="reviews-toggle__count">5,0 / 5 · 12 recensioni</span>
+            </div>
+            <span class="reviews-toggle__hint">Tocca per leggere tutte le recensioni</span>
+          </div>
+          <span class="reviews-toggle__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </summary>
+
+        <div class="reviews-toggle__content">
+          <div class="reviews-toggle__inner">
+            <p class="lead reviews-toggle__intro">Famiglie, gruppi di amici, festeggiati di ogni età. Ecco cosa pensano di Villa Marchetti coloro che hanno vissuto qui un momento speciale.</p>
 
       <div class="reviews-grid">
 
@@ -435,6 +448,9 @@
           <div class="reviews-summary__label">Basato sulle recensioni dei nostri ospiti</div>
         </div>
       </div>
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 

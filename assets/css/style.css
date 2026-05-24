@@ -904,6 +904,124 @@ p  { margin: 0 0 1.1em; }
   color: var(--color-ink-soft);
 }
 
+/* ----- Dropdown / Tendina recensioni ----- */
+.reviews-toggle {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.reviews-toggle:hover { border-color: var(--color-brass); }
+.reviews-toggle[open] {
+  box-shadow: 0 24px 60px -30px rgba(31,31,29,.18);
+}
+
+.reviews-toggle__summary {
+  list-style: none;
+  cursor: pointer;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.reviews-toggle__summary::-webkit-details-marker { display: none; }
+.reviews-toggle__summary::marker { display: none; content: ''; }
+.reviews-toggle__summary:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: -4px;
+}
+
+.reviews-toggle__heading {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+}
+.reviews-toggle__heading h2 {
+  margin: .25rem 0 .35rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+.reviews-toggle__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: .4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.reviews-toggle__stars {
+  color: var(--color-brass);
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+.reviews-toggle__count {
+  font-family: var(--font-sans);
+  font-size: .82rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  font-weight: 500;
+}
+.reviews-toggle__hint {
+  font-family: var(--font-sans);
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--color-brass-dk);
+  margin-top: .9rem;
+  font-weight: 500;
+}
+.reviews-toggle[open] .reviews-toggle__hint::before { content: 'Chiudi · '; }
+.reviews-toggle:not([open]) .reviews-toggle__hint::after { content: ' ↓'; }
+
+.reviews-toggle__chevron {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  border: 1px solid var(--color-brass);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brass-dk);
+  transition: transform .45s cubic-bezier(.22,.61,.36,1), background var(--t-fast);
+}
+.reviews-toggle__chevron svg { width: 20px; height: 20px; }
+.reviews-toggle__summary:hover .reviews-toggle__chevron {
+  background: var(--color-brass);
+  color: var(--color-bg);
+}
+.reviews-toggle[open] .reviews-toggle__chevron { transform: rotate(180deg); }
+
+.reviews-toggle__content {
+  overflow: hidden;
+  transition: height .55s cubic-bezier(.22,.61,.36,1);
+}
+.reviews-toggle__inner {
+  padding: 0 clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--color-line);
+}
+.reviews-toggle__intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+}
+.reviews-toggle__inner .reviews-grid { margin-top: 2.5rem; }
+.reviews-toggle__inner .reviews-summary { margin-top: 2rem; }
+
+@media (max-width: 640px) {
+  .reviews-toggle__summary {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .reviews-toggle__chevron { width: 44px; height: 44px; }
+  .reviews-toggle__chevron svg { width: 18px; height: 18px; }
+}
+
 /* -----  Reveal on scroll  ----- */
 .reveal {
   opacity: 0;

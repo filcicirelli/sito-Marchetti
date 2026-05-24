@@ -50,6 +50,51 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* Tendina recensioni — animazione altezza fluida */
+  document.querySelectorAll('.reviews-toggle').forEach((details) => {
+    const summary = details.querySelector('summary');
+    const content = details.querySelector('.reviews-toggle__content');
+    if (!summary || !content) return;
+
+    let animating = false;
+
+    summary.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (animating) return;
+      animating = true;
+
+      if (details.open) {
+        // chiusura
+        const startHeight = content.scrollHeight;
+        content.style.height = startHeight + 'px';
+        requestAnimationFrame(() => {
+          content.style.height = '0px';
+        });
+        const onEnd = () => {
+          details.open = false;
+          content.style.height = '';
+          content.removeEventListener('transitionend', onEnd);
+          animating = false;
+        };
+        content.addEventListener('transitionend', onEnd);
+      } else {
+        // apertura
+        details.open = true;
+        const endHeight = content.scrollHeight;
+        content.style.height = '0px';
+        requestAnimationFrame(() => {
+          content.style.height = endHeight + 'px';
+        });
+        const onEnd = () => {
+          content.style.height = '';
+          content.removeEventListener('transitionend', onEnd);
+          animating = false;
+        };
+        content.addEventListener('transitionend', onEnd);
+      }
+    });
+  });
+
   /* Form contatti — fallback mailto */
   const form = document.querySelector('#contact-form');
   if (form) {
