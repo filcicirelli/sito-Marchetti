@@ -80,11 +80,21 @@ oppure trascina semplicemente `index.html` nel browser.
 
 ## TODO contenuti reali
 
-- [ ] Sostituire le immagini di placeholder Unsplash con foto autentiche della villa (cartella `assets/img/`).
-- [ ] Aggiornare numero di telefono ed email reali nel footer e nella pagina contatti.
-- [ ] Caricare un'immagine `og.jpg` (1200×630) in `assets/img/` per le anteprime social.
-- [ ] Collegare il form contatti a un servizio (Formspree, Resend, EmailJS o serverless function su Vercel).
-- [ ] Verificare e correggere l'indirizzo esatto della villa.
+### Foto della villa
+- [ ] **Scaricare le foto da Instagram e Facebook** (le piattaforme bloccano il download automatico):
+  1. Apri ogni post su [Instagram](https://www.instagram.com/villa_marchetti_altamura/) o [Facebook](https://www.facebook.com/profile.php?id=100035421801743)
+  2. Salva l'immagine in alta risoluzione (tasto destro → "Salva immagine")
+  3. Mettile nella cartella `assets/img/` con nomi descrittivi (es. `villa-cortile.jpg`, `salone-cena.jpg`, `piscina-tramonto.jpg`)
+  4. Aggiorna i `background-image: url(...)` nei file HTML sostituendo gli URL Unsplash con i path locali (`/assets/img/nome-foto.jpg`)
+- [ ] Caricare un'immagine **`og.jpg`** (1200×630) in `assets/img/` per le anteprime social
+
+### Recensioni
+- [ ] **⚠️ Importante** — Le 12 recensioni nella Home (e quelle ridotte in Eventi/Contatti) sono **testi placeholder realistici**. Prima di andare in produzione vanno sostituite con **recensioni reali** ricevute dai clienti (es. recensioni Google, Facebook, email di ringraziamento autorizzate). In Italia, mostrare recensioni inventate è vietato dal Codice del Consumo (art. 23). Suggerimento: richiedere ai clienti di lasciare una recensione su Google Business Profile e poi citarle qui con nome/iniziale e link al profilo.
+
+### Altri contenuti
+- [ ] Aggiornare numero di telefono ed email reali nel footer e nella pagina contatti
+- [ ] Verificare e correggere l'indirizzo esatto della villa (attualmente generico "Altamura, BA")
+- [ ] Collegare il form contatti a un servizio (Formspree, Resend, EmailJS o serverless function su Vercel) — attualmente usa fallback `mailto:`
 
 ---
 

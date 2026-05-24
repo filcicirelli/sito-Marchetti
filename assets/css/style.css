@@ -584,6 +584,163 @@ p  { margin: 0 0 1.1em; }
   .site-header { color: var(--color-bg); }
 }
 
+/* =====================================================
+   PERCHÉ SCEGLIERCI — Vantaggi
+   ===================================================== */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--color-line);
+  margin-top: 3rem;
+  border: 1px solid var(--color-line);
+}
+.benefit {
+  background: var(--color-bg);
+  padding: 2.5rem 2rem;
+  text-align: left;
+  transition: background var(--t-fast);
+}
+.benefit:hover { background: var(--color-bg-alt); }
+.benefit__num {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-brass-dk);
+  letter-spacing: .15em;
+  margin-bottom: .8rem;
+}
+.benefit h3 {
+  font-size: 1.25rem;
+  margin-bottom: .6rem;
+  line-height: 1.25;
+}
+.benefit p {
+  font-size: .95rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+  line-height: 1.6;
+}
+.section--olive .benefits { background: rgba(247,242,232,.12); border-color: rgba(247,242,232,.12); }
+.section--olive .benefit { background: var(--color-olive); color: var(--color-bg); }
+.section--olive .benefit:hover { background: var(--color-olive-dk); }
+.section--olive .benefit h3 { color: var(--color-bg); }
+.section--olive .benefit p { color: rgba(247,242,232,.78); }
+.section--olive .benefit__num { color: var(--color-brass); }
+
+/* =====================================================
+   RECENSIONI — Testimonianze clienti
+   ===================================================== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+@media (max-width: 980px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+.review-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
+}
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -20px rgba(31,31,29,.18);
+  border-color: var(--color-brass);
+}
+.review-card__stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--color-brass);
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.review-card__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: var(--color-ink);
+  margin: 0;
+  flex: 1;
+}
+.review-card__meta {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
+}
+.review-card__avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-olive);
+  color: var(--color-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.review-card__name {
+  font-family: var(--font-sans);
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+.review-card__event {
+  font-family: var(--font-sans);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--color-brass-dk);
+  margin-top: .25rem;
+  display: block;
+}
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-line);
+}
+.reviews-summary__score {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-olive-dk);
+  line-height: 1;
+}
+.reviews-summary__score small {
+  font-size: 1.1rem;
+  color: var(--color-ink-soft);
+  margin-left: .2em;
+}
+.reviews-summary__stars {
+  color: var(--color-brass);
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+.reviews-summary__label {
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
 /* -----  Reveal on scroll  ----- */
 .reveal {
   opacity: 0;
